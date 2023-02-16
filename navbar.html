@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+</head>
+<script>
+    $(document).ready(function(){
+        $('#btn').click(function(){
+            $('ul').toggleClass('show');
+        });
+    });
+</script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        text-decoration: none;
+        list-style-type: none;
+    }
+    body{
+        font-family:montserrat;
+    }
+    nav{
+        height: 13vh;
+        width:100%;
+        background-color: rgb(9, 9, 70);
+    }
+    .logo{
+        font-size: 35px;
+        font-weight: bold;
+        color:white;
+        padding:0 50px;
+        line-height: 80px;
+        cursor: pointer;
+    }
+    ul{
+        float:right;
+        margin-right:50px;
+    }
+    li{
+        display:inline-block;
+        margin:0 8px;
+        line-height: 80px;
+    }
+    a{
+        color:white;
+        font-size: 18px;
+        text-transform: uppercase;
+        border: 1px solid transparent;
+        padding: 7px 10px;
+        border-radius:3px;
+    }
+    a.active, a:hover{
+        border: 1px solid white;
+        transition: 0.9s;
+
+    }
+    #btn{
+        padding:0px 20px;
+        line-height: 40px;
+        float:right;
+        margin-top: 20px;
+        margin-right:40px;
+        cursor: pointer;
+        display:none;
+    }
+    .home{
+        background-color: rgb(121, 114, 114);
+        height:100vh;
+        width:100%;
+    }
+    @media (max-width:1048px){
+        .logo{
+            font-size:32px;
+            padding-left: 60px;
+        }
+        ul{
+            margin-right: 20px;
+        }
+        a{
+            font-size: 17px;
+        }
+    }
+    @media (max-width:909px){
+        #btn{
+            display:block;
+        }
+        ul{
+            position:fixed;
+            width:100%;
+            height: 100vh;
+            background-color: rgb(9, 9, 70);
+            top:80px;
+            left:-100%;
+            text-align: center;
+            transition:all .9s;
+        }
+        li{
+            display:block;
+        }
+        a{
+            font-size: 20px;
+        }
+        a.active, a:hover{
+            color:white;
+        }
+        .show{
+            left:0px;
+        }
+    }
+</style>
+<body>
+    <nav>
+        <label class="logo">Dakieo</label>
+        <ul>
+            <li><a class="active" href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Feedback</a></li>
+        </ul>
+        <button id="btn">=</button>
+    </nav>
+    <section class="home">
+
+    </section>
+</body>
+</html>
